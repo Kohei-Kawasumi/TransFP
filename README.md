@@ -35,6 +35,8 @@
 | **YOLO(v3,v4,v5,v6)**| COCO2017 | 84.3% | 62.1% | 77.5% | 50.4% |
 | | BDD100K | 74.8% | **73.9%** | 74.2% | 68.9% |
 
+
+
 ## Table2：Comparison of FP rates of our attacks by only single loss function and both loss functions
 
 | Loss Function | Surrogate Model | Dataset | YOLOv8 ($\epsilon=32$) | YOLOv8 ($\epsilon=16$) | YOLOv9 ($\epsilon=32$) | YOLOv9 ($\epsilon=16$) |
@@ -45,3 +47,39 @@
 | | | BDD100K | 63.7% | 59.8% | 64.0% | 58.7% |
 | **both loss functions** | YOLO(v3,v4,v5,v6) | COCO2017 | 84.3% | 62.1% | 77.5% | 50.4% |
 | | | BDD100K | 74.8% | 73.9% | 74.2% | 68.9% |
+
+
+
+## 📄 Algorithm: Adversarial perturbation generation using multiple surrogate models
+
+### **Inputs & Outputs**
+* **Require:**
+  * $\mathcal{D} = \{(x_1, y_1), (x_2, y_2), \dots, (x_m, y_m)\}$: Input dataset ($m$ images and their labels)
+  * $\{\mathcal{M}_1, \mathcal{M}_2, \dots, \mathcal{M}_n\}$: Set of $n$ surrogate models
+  * $\epsilon$: Magnitude of perturbation in FGSM
+  * $E$: Epoch
+  * $\mathcal{L}(\mathcal{M}_i(x), y)$: Function to compute the loss from the output predicted by the surrogate model $\mathcal{M}_i$ by inputting $x$ and a label $y$.
+* **Ensure:**
+  * $x^\text{adv}$: Final generated attack image
+
+---
+
+### **Procedure: Generation of attack images**
+
+* **Initialization:**
+  * $x^\text{adv} \gets \text{None}$
+* **Loop Process:**
+  * **For** $e \gets 1$ **to** $E$ **do**
+    * **For each** $(x, y) \in \mathcal{D}$ **do**
+      * $L_\text{total} \gets 0$
+      * **For** $i \gets 1$ **to** $n$ **do**
+        * $L_i \gets \mathcal{L}(\mathcal{M}_i(x), y)$
+        * $L_\text{total} \gets L_\text{total} + L_i$
+      * **End For**
+      * $$L_\text{avg} = \frac{L_\text{total}}{n}$$
+      * $$g \gets \nabla_x L_\text{avg}$$
+      * $$\delta \gets \epsilon \cdot \text{sign}(g)$$
+      * $$x^\text{adv} \gets x + \delta$$
+    * **End For**
+  * **End For**
+* **Return** $x^\text{adv}$
