@@ -22,18 +22,18 @@
 | | BDD100K | 49.2% | 47.0% | 34.9% | 31.1% |
 | **YOLO(v4,v6)** | COCO2017 | 73.8% | 31.2% | 67.0% | 31.7% |
 | | BDD100K | 60.5% | 48.4% | 39.4% | 27.3% |
-| **YOLO(v5,v6)** | COCO2017 | 76.0% | 67.2% | **87.2%** | **62.5%** |
-| | BDD100K | 56.2% | 51.0% | 76.2% | **73.2%** |
+| **YOLO(v5,v6)** | COCO2017 | 76.0% | 67.2% | **<span style="color: red;">87.2%</span>** | **<span style="color: red;">62.5%</span>** |
+| | BDD100K | 56.2% | 51.0% | 76.2% | **<span style="color: red;">73.2%</span>** |
 | **YOLO(v3,v4,v5)** | COCO2017 | 74.2% | 57.1% | 42.7% | 35.3% |
 | | BDD100K | 68.0% | 39.6% | 21.5% | 22.0% |
 | **YOLO(v3,v4,v6)** | COCO2017 | 79.4% | 57.8% | 59.8% | 33.9% |
 | | BDD100K | 73.1% | 61.2% | 33.7% | 23.7% |
-| **YOLO(v3,v5,v6)** | COCO2017 | **84.4%** | **71.3%** | 80.7% | 51.1% |
-| | BDD100K | **82.9%** | 73.5% | **79.7%** | 72.7% |
+| **YOLO(v3,v5,v6)** | COCO2017 | **<span style="color: red;">84.4%</span>** | **<span style="color: red;">71.3%</span>** | 80.7% | 51.1% |
+| | BDD100K | **<span style="color: red;">82.9%</span>** | 73.5% | **<span style="color: red;">79.7%</span>** | 72.7% |
 | **YOLO(v4,v5,v6)** | COCO2017 | 80.5% | 65.3% | 83.6% | 53.7% |
 | | BDD100K | 62.1% | 55.2% | 73.4% | 70.7% |
 | **YOLO(v3,v4,v5,v6)**| COCO2017 | 84.3% | 62.1% | 77.5% | 50.4% |
-| | BDD100K | 74.8% | **73.9%** | 74.2% | 68.9% |
+| | BDD100K | 74.8% | **<span style="color: red;">73.9%</span>** | 74.2% | 68.9% |
 
 ## Table2：Comparison of FP rates of our attacks by only single loss function and both loss functions
 
@@ -41,7 +41,9 @@
 | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
 | **bounding box area loss only** | YOLO(v3,v4,v5,v6) | COCO2017 | 25.2% | 22.4% | 28.1% | 25.3% |
 | | | BDD100K | 52.3% | 33.8% | 33.4% | 24.4% |
+| --- | --- | --- | --- | --- | --- | --- |
 | **max object loss only** | YOLO(v3,v4,v5,v6) | COCO2017 | 78.2% | 56.6% | 72.6% | 44.0% |
 | | | BDD100K | 63.7% | 59.8% | 64.0% | 58.7% |
-| **both loss functions** | YOLO(v3,v4,v5,v6) | COCO2017 | <span style="color: red;">84.3%</span> | <span style="color: red;">62.1%</span> | <span style="color: red;">77.5%</span> | <span style="color: red;">50.4%</span> |
-| | | BDD100K | <span style="color: red;">74.8%</span> | <span style="color: red;">73.9%</span> | <span style="color: red;">74.2%</span> | <span style="color: red;">68.9%</span> |
+| --- | --- | --- | --- | --- | --- | --- |
+| **both loss functions** | YOLO(v3,v4,v5,v6) | COCO2017 | 84.3% | 62.1% | 77.5% | 50.4% |
+| | | BDD100K | 74.8% | 73.9% | 74.2% | 68.9% |
