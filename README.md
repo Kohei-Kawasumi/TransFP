@@ -1,5 +1,4 @@
-## Table 1
-## FP rates of our attacks by various ensemble combinations
+## Table1：FP rates of our attacks by various ensemble combinations
 
 | Surrogate Model | Dataset | YOLOv8 ($\epsilon=32$) | YOLOv8 ($\epsilon=16$) | YOLOv9 ($\epsilon=32$) | YOLOv9 ($\epsilon=16$) |
 | :--- | :--- | :---: | :---: | :---: | :---: |
