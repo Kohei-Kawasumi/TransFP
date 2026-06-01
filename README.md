@@ -5,11 +5,8 @@ This repository is the official implementation of the paper: **"Zero-Query Black
 ## 📌 Overview
 This project proposes a novel **zero-query black-box adversarial attack** that aims to induce **false positives** in object detection models (such as YOLOv8 and YOLOv9). By creating an ensemble of multiple white-box surrogate models (YOLOv3, v4, v5, v6), we generate a **Universal Adversarial Perturbation (UAP)** with high transferability. 
 
-[cite_start]Our attack utilizes a combined loss function consisting of **Maximum Object Loss** and **Bounding Box Area Loss** to efficiently bypass Non-Maximum Suppression (NMS) and generate dense false bounding boxes.
+Our attack utilizes a combined loss function consisting of **Maximum Object Loss** and **Bounding Box Area Loss** to efficiently bypass Non-Maximum Suppression (NMS) and generate dense false bounding boxes.
 
-<p align="center">
-  <img src="docs/overview.png" width="80%" alt="Attack Overview">
-</p>
 
 ## 🚀 Key Features
 - **Zero-Query Black-Box Attack**: No query or feedback is required from the target model.
