@@ -1,4 +1,4 @@
-# TransFP: Zero-Query Black-Box Adversarial Attacks using Transferability on Object Detection Models
+# Zero-Query Black-Box Adversarial Attacks using Transferability on Object Detection Models
 
 This repository is the official implementation of the paper: **"Zero-Query Black-Box Adversarial Attacks using Transferability on Object Detection Models"**.
 
